@@ -1,5 +1,5 @@
 
-public class Immigrant {
+public class Immigrant{
 
 	String firstName;
 	String lastName;
@@ -27,7 +27,11 @@ public class Immigrant {
 		
 	}
 	
-	
+	public int compareTo(Immigrant o)
+	{
+		
+		return this.firstName.compareTo(o.firstName) && this.lastName.compareTo(o.lastame) && this.alienID.compareTo(o.alienID);
+	}	
 	
 	
 }
