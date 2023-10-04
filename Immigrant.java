@@ -27,6 +27,10 @@ public class Immigrant {
 		
 	}
 	
+	public void setStatus(String s){
+		return this.status = s;
+	}
+	
 	
 	
 	
