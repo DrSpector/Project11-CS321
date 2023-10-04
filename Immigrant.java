@@ -32,6 +32,11 @@ public class Immigrant{
 		
 		return this.firstName.compareTo(o.firstName) && this.lastName.compareTo(o.lastame) && this.alienID.compareTo(o.alienID);
 	}	
+	public void setStatus(String s){
+		return this.status = s;
+	}
+	
+	
 	
 	
 }
