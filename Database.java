@@ -21,9 +21,8 @@ public class Database {
 	//ToDo
 	public static boolean setImmigrant(Immigrant i)
 	{
-		if(!ImmList.contains(i))
-			return false;
-		ImmList.remove(i);
+		if(ImmList.contains(i))
+			ImmList.remove(i);
 		ImmList.add(i);
 		return true;
 	}
