@@ -50,6 +50,11 @@ public class Immigrant{
 		return this.firstName.equals(c.firstName) && this.lastName.equals(c.lastName) && this.alienID.equals(c.alienID);
 	}
 	
+	public static void main(String[] args) {
+		Immigrant a = new Immigrant("Long", "John", "123asdf");
+		
+        System.out.println(a);
+    }
 	
 	
 }
