@@ -33,6 +33,8 @@ public class Immigrant{
 		
 		return this.firstName.compareTo(o.firstName);
 	}	
+	
+	//ToDo Finish calls
 	public void setStatus(String s){
 		status = s;
 		//Call setImmigrant
@@ -40,6 +42,13 @@ public class Immigrant{
 		
 	}
 	
+	public boolean equals(Object o)
+	{
+		if (!(o instanceof Immigrant))
+			return false;
+		Immigrant c = (Immigrant) o;
+		return this.firstName.equals(c.firstName) && this.lastName.equals(c.lastName) && this.alienID.equals(c.alienID);
+	}
 	
 	
 	
