@@ -19,4 +19,11 @@ public class Database {
 		
 		return null;
 	}
+	
+	//ToDo
+	public static boolean setImmigrant(Immigrant i)
+	{
+		
+		return false;
+	}
 }

@@ -35,6 +35,9 @@ public class Immigrant{
 	}	
 	public void setStatus(String s){
 		status = s;
+		//Call setImmigrant
+		//Call setNext
+		
 	}
 	
 	

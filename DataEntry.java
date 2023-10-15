@@ -32,11 +32,6 @@ public class DataEntry {
 
 
 	private class DataEntryScreen extends Frame{
-
-		private String alienID;
-		private String firstName;
-		private String lastName;
-			
 		
 		private Label label1;
 		private TextField fName;
@@ -89,12 +84,14 @@ public class DataEntry {
 		{
 			
 			currentImmigrant = new Immigrant(firstName,lastName,alienNum);
+			//ToDo: Add response to validate False
 			currentImmigrant.validateInfo();
 			
 			
 			return null;
 		}
 		
+		//ToDo All of this redrawing the screen
 		public void showScreen()
 		{
 			
@@ -108,6 +105,9 @@ public class DataEntry {
 		        	getInfo(fName.getText(),lName.getText(),aNum.getText());
 		        else if(evt.getSource().equals(submit))	    	
 		        	currentImmigrant.setStatus("Test");
+		  
+		    	
+		    	showScreen();
 		      }
 		}
 	}
