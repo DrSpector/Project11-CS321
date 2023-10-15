@@ -1,23 +1,24 @@
 
 public class Immigrant{
 
-	String firstName;
-	String lastName;
-	String alienID;
-	
-	Immigrant createdImmigrant;
+	private String firstName;
+	private String lastName;
+	private String alienID;
+	private String status;
+	private Immigrant searchedImmigrant;
 	
 	public Immigrant(String fN, String lN, String AID)
 	{
 		firstName = fN;
 		lastName = lN;
 		alienID = AID;
+		status = null;
 	}
 	
-	public String createImmigrant(String[] info)
+	public Immigrant createImmigrant(String firstName, String lastName, String Anum)
 	{
-		createdImmigrant = new Immigrant(info[0],info[1],info[2]);
-		return info[2];
+		searchedImmigrant = Database.getImmigrant(firstName, lastName, Anum);	
+		return searchedImmigrant;
 	}
 	
 	public boolean validateInfo()
@@ -30,10 +31,10 @@ public class Immigrant{
 	public int compareTo(Immigrant o)
 	{
 		
-		return this.firstName.compareTo(o.firstName) && this.lastName.compareTo(o.lastame) && this.alienID.compareTo(o.alienID);
+		return this.firstName.compareTo(o.firstName);
 	}	
 	public void setStatus(String s){
-		return this.status = s;
+		status = s;
 	}
 	
 	
