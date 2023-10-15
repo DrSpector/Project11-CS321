@@ -12,20 +12,23 @@ public class DataEntryTest {
 			};
 	
 	
+	
 	//@BeforeClass
-	//public static void main(String[] args)
-	{
-		Database.setImmigrant(new Immigrant("Jerry","Smith","86ADF"));
-		Database.setImmigrant(new Immigrant("Waldo","Warenton","32A65"));
-		Database.setImmigrant(new Immigrant("Patrick","Guzman","55Y4A"));
+	public static void main(String[] args)
+	{	
 		
-
+		
+		org.junit.runner.JUnitCore.main("DataEntryTest");
 	}
 	
 	
 	@Test
 	public void getInfo1()
 	{
+		Database.setImmigrant(new Immigrant("Jerry","Smith","86ADF"));
+		Database.setImmigrant(new Immigrant("Waldo","Warenton","32A65"));
+		Database.setImmigrant(new Immigrant("Patrick","Guzman","55Y4A"));
+		
 		assertEquals(Database.getImmigrant("Jerry","Smith","86ADF"),ImmArray[0]);
 		assertEquals(Database.getImmigrant("Waldo","Warenton","32A65"),ImmArray[1]);
 		assertEquals(Database.getImmigrant("Patrick","Guzman","55Y4A"),ImmArray[2]);
@@ -35,6 +38,11 @@ public class DataEntryTest {
 	@Test
 	public void getInfo2()
 	{
+		Database.setImmigrant(new Immigrant("Jerry","Smith","86ADF"));
+		Database.setImmigrant(new Immigrant("Waldo","Warenton","32A65"));
+		Database.setImmigrant(new Immigrant("Patrick","Guzman","55Y4A"));
+		
+		
 		assertNotEquals(Database.getImmigrant("Jorry","Smith","86ADF"),ImmArray[0]);
 		assertNotEquals(Database.getImmigrant("Waldo","Warennton","32A65"),ImmArray[1]);
 		assertNotEquals(Database.getImmigrant("Patrick","Guzman","55B4A"),ImmArray[2]);
