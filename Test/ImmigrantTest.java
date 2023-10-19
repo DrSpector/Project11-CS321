@@ -3,31 +3,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ImmigrantTest {
-
+	private Immigrant immigrant = null;
+	
 	public static void main(String[] args)
     {
-
         org.junit.runner.JUnitCore.main("ImmigrantTest");
     }
-	/*
+	
     @Before
     public void setUp() {
-        Immigrant immigrant = new Immigrant("John", "Doe", "123456");
+    	immigrant = new Immigrant("John", "Doe", "123456");
     }
-	*/
+	
     @Test
     public void testCreateImmigrant() {
-        // Assuming Database.getImmigrant is a mock or is handled appropriately in testing
+        //Assuming Database.getImmigrant is a mock or is handled appropriately in testing
         //Immigrant createdImmigrant = immigrant.createImmigrant("John", "Doe", "123456");
         
         assertNotNull(new Immigrant("John", "Doe", "123456"));
-        /*
+    
         assertEquals("John", createdImmigrant.getFirstName());
         assertEquals("Doe", createdImmigrant.getLastName());
         assertEquals("123456", createdImmigrant.getAlienID());
-        */
     }
-	/*
+
     @Test
     public void testValidateInfo() {
         assertTrue(immigrant.validateInfo());
@@ -59,5 +58,5 @@ public class ImmigrantTest {
 
         immigrant.setStatus("Pending");
         assertEquals("Pending", immigrant.getStatus());
-    }*/
+    }
 }
