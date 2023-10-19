@@ -4,6 +4,7 @@ import org.junit.Test;
 
 public class ImmigrantTest {
 	private Immigrant immigrant = null;
+	private Immigrant immigrant3 = null;
 	
 	public static void main(String[] args)
     {
@@ -13,6 +14,7 @@ public class ImmigrantTest {
     @Before
     public void setUp() {
     	immigrant = new Immigrant("John", "Doe", "123456");
+    	
     }
 	
     @Test
@@ -20,11 +22,18 @@ public class ImmigrantTest {
         //Assuming Database.getImmigrant is a mock or is handled appropriately in testing
         //Immigrant createdImmigrant = immigrant.createImmigrant("John", "Doe", "123456");
         
-        assertNotNull(new Immigrant("John", "Doe", "123456"));
-    
-        assertEquals("John", createdImmigrant.getFirstName());
-        assertEquals("Doe", createdImmigrant.getLastName());
-        assertEquals("123456", createdImmigrant.getAlienID());
+        assertNotNull(immigrant);
+        assertEquals(null, immigrant3);
+        
+        assertEquals("John", immigrant.getFirstName());
+        assertEquals("Doe", immigrant.getLastName());
+        assertEquals("123456", immigrant.getAlienID());
+        
+        immigrant3 = new Immigrant("Joe", "Deck", "0987654");
+        assertEquals("Joe", immigrant3.getFirstName());
+        assertEquals("Deck", immigrant3.getLastName());
+        assertEquals("0987654", immigrant3.getAlienID());
+        
     }
 
     @Test
@@ -55,8 +64,13 @@ public class ImmigrantTest {
     @Test
     public void testSetStatus() {
         assertNull(immigrant.getStatus()); // Status should be null initially
-
+		assertNull(immigrant3.getStatus());
+		
+		
         immigrant.setStatus("Pending");
         assertEquals("Pending", immigrant.getStatus());
+        
+        immigrant3.setStatus("Approved");
+        assertEquals("Approved", immigrant3.getStatus());
     }
 }
