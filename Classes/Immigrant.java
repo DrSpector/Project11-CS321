@@ -34,13 +34,7 @@ public class Immigrant{
 		return this.firstName.compareTo(o.firstName);
 	}	
 	
-	//ToDo Finish calls
-	public void setStatus(String s){
-		status = s;
-		//Call setImmigrant
-		//Call setNext
-		
-	}
+
 	
 	public boolean equals(Object o)
 	{
@@ -49,11 +43,40 @@ public class Immigrant{
 		Immigrant c = (Immigrant) o;
 		return this.firstName.equals(c.firstName) && this.lastName.equals(c.lastName) && this.alienID.equals(c.alienID);
 	}
-	
+	public String getFirstName(){
+		return this.firstName;
+	}
+	public String getLastName(){
+		return this.lastName;
+	}
+	public String getAlienID(){
+		return this.alienID;
+	}
+	public String getStatus(){
+		return this.status;
+	}
+	public void setFirstName(String fName){
+		this.firstName = fName;
+	}
+	public void setLastName(String lName){
+		this.lastName = lName;
+	}
+	public void setAlienID(String id){
+		this.alienID = id;
+	}
+	//ToDo Finish calls
+	public void setStatus(String s){
+		status = s;
+		//Call setImmigrant
+		//Call setNext
+		
+	}
 	public static void main(String[] args) {
 		Immigrant a = new Immigrant("Long", "John", "123asdf");
-		
-        System.out.println(a);
+		a.setFirstName("YOHOBO");
+        System.out.println(a.getFirstName());
+		System.out.println(a.getLastName());
+		System.out.println(a.getAlienID());
     }
 	
 	
