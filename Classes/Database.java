@@ -1,11 +1,8 @@
 import java.util.ArrayList;
 
-public class Database {
+class Database {
 
-	private static ArrayList<Immigrant> ImmList = new ArrayList<Immigrant>();
-	
-	
-
+	public static ArrayList<Immigrant> ImmList = new ArrayList<Immigrant>();
 	
 	
 	public static Immigrant getImmigrant(String firstName, String lastName, String aNum)
