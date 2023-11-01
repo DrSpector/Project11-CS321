@@ -15,7 +15,6 @@ import javafx.event.EventHandler;
 
 public class DEScreen extends Application {
 
-//Attributes - need to be here for nested button stuff
     TextField fNameInput;
     TextField lNameInput;
     TextField idInput;
@@ -23,13 +22,12 @@ public class DEScreen extends Application {
     TextField fNameOutput;
     TextField lNameOutput;
     TextField idOutput;
-
-
+    Label userMessage;
 
     @Override
     public void start(Stage stage) {
 
-	Scene scene = new Scene(new Group(), 450, 250);
+	Scene scene = new Scene(new Group(), 600, 250);
 
 	GridPane grid = new GridPane();
 	grid.setPadding(new Insets(10, 10, 10, 10));
@@ -45,7 +43,6 @@ public class DEScreen extends Application {
 	Label nameLabel4 = new Label("Last Name");
 	Label statusLabel = new Label("Status");
 
-	//Input stuff
 	idInput = new TextField();
 	idInput.setPrefColumnCount(10);
 
@@ -54,8 +51,9 @@ public class DEScreen extends Application {
 	lNameInput = new TextField();
 	lNameInput.setPrefColumnCount(10);
 
-	
-	//Output stuff
+	statusInput = new TextField();
+	statusInput.setPrefColumnCount(10);
+
 	fNameOutput = new TextField();
 	fNameOutput.setPrefColumnCount(10);
 	fNameOutput.setDisable(true);
@@ -67,11 +65,9 @@ public class DEScreen extends Application {
 	idOutput = new TextField();
 	idOutput.setPrefColumnCount(10);
 	idOutput.setDisable(true);
-
-	statusInput = new TextField();
-	statusInput.setPrefColumnCount(10);
-
-
+	
+	userMessage = new Label();
+	userMessage.setVisible(false);
 
 	grid.add(aIDLabel1, 0, 0);
 	grid.add(idInput,1,0);
@@ -82,7 +78,9 @@ public class DEScreen extends Application {
 	grid.add(lNameInput,3,1);
 
 
-	
+	Button search = new Button("Search");
+	GridPane.setConstraints(search, 0, 2);
+	grid.getChildren().add(search);
 	
 	
 
@@ -98,31 +96,54 @@ public class DEScreen extends Application {
 	grid.add(statusLabel, 0, 6);
 	grid.add(statusInput,1,6);
 
-	Button search = new Button("Search");
-	GridPane.setConstraints(search, 0, 2);
-	grid.getChildren().add(search);
+	
 
 	Button submit = new Button("Submit");
 	GridPane.setConstraints(submit, 0, 7);
 	grid.getChildren().add(submit);
 	
-	//Button that takes the stuff in the top half, searches for Imm, and displays what it got in the bottom
-	//ToDo Error handling
+	grid.add(userMessage,4,4);	
+
 	search.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-		Immigrant foundImm = Immigrant.createImmigrant(idInput.getText(),fNameInput.getText(),lNameInput.getText());
-		fNameOutput.setText(foundImm.getFirstName());
-		lNameOutput.setText(foundImm.getLastName());
-		idOutput.setText(foundImm.getAlienID());
+		fNameOutput.setText("");
+		lNameOutput.setText("");
+		idOutput.setText("");
+		statusInput.setText("");
+		Immigrant foundImm = Immigrant.createImmigrant1(idInput.getText(),fNameInput.getText(),lNameInput.getText());
+		if(foundImm != null)
+		{
+			userMessage.setVisible(false);
+			fNameOutput.setText(foundImm.getFirstName());
+			lNameOutput.setText(foundImm.getLastName());
+			idOutput.setText(foundImm.getAlienID());
+			statusInput.setText(foundImm.getStatus());
+		}
+		else
+		{
+			userMessage.setText("Immigrant not Found.");
+			userMessage.setVisible(true);
+		}
+		
             }
 	});
 
-	//Button with no functions yet
 	submit.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-		Add stuff here
+		Immigrant putImm = Immigrant.createImmigrant1(idInput.getText(),fNameInput.getText(),lNameInput.getText());
+		if(putImm != null)
+		{	
+			userMessage.setVisible(false);
+			putImm.setStatus(statusInput.getText());
+			Database.setImmigrant(putImm);
+		}
+		else
+		{
+			userMessage.setText("Immigrant not Found.");
+			userMessage.setVisible(true);
+		}
             }
 	});
 
