@@ -21,6 +21,16 @@ public class Immigrant{
 		return searchedImmigrant;
 	}
 	
+	public static Immigrant createImmigrant1(String firstName, String lastName, String Anum)
+	{
+		Immigrant searchedImmigrant1 = new Immigrant(firstName,lastName,Anum);
+		if(searchedImmigrant1.validateInfo())
+			searchedImmigrant1 = Database.getImmigrant(firstName, lastName, Anum);
+		else
+			return null;	
+		return searchedImmigrant1;
+	}
+
 	public boolean validateInfo()
 	{
 		return this.firstName != null && this.lastName != null && this.alienID != null;
