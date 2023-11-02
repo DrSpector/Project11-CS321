@@ -3,7 +3,7 @@ import java.util.ArrayList;
 class Database {
 
 	public static ArrayList<Immigrant> ImmList = new ArrayList<Immigrant>();
-	
+	s
 	
 	public static Immigrant getImmigrant(String firstName, String lastName, String aNum)
 	{

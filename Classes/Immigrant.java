@@ -12,7 +12,7 @@ public class Immigrant{
 		firstName = fN;
 		lastName = lN;
 		alienID = AID;
-		status = null;
+		status = "";
 	}
 	
 	public Immigrant createImmigrant(String firstName, String lastName, String Anum)
