@@ -5,7 +5,7 @@ class Database {
 	public static ArrayList<Immigrant> ImmList = new ArrayList<Immigrant>();
 	s
 	
-	public static Immigrant getImmigrant(String firstName, String lastName, String aNum)
+	public static Immigrant getImmigrant(String aNum, String firstName, String lastName)
 	{
 		//Find Immigrant using this info in ImmList
 		Immigrant searchedImmigrant = new Immigrant(firstName,lastName,aNum);

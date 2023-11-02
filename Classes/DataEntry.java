@@ -17,7 +17,7 @@ public class DataEntry {
 	public static void main(String[] args)
 	{
 		
-		//When submit is hit
+		//
 		//Screen = new DataEntryScreen();
 		
 		
