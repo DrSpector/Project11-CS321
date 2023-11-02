@@ -14,3 +14,8 @@ Changes 10-31-23
 Added DEScreen and Driver
 Changed Database.getImmigrant() argument order, now is id, first name, last name
 Suggested: Change Immigrant.createImmigrant() to a static method, makes it easier to call from other methods and it doesnt need to be tied to an instance anyways
+
+
+Changes 11-2-23
+Added Review
+Changed Immigrant. status initialized to ""
