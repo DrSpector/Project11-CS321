@@ -43,6 +43,19 @@ public class Driver extends Application
 	GridPane.setConstraints(Review, 0, 1);
 	grid.getChildren().add(Review);
 	
+	Review.setOnAction(new EventHandler<ActionEvent>() {
+       		@Override
+        	public void handle(ActionEvent event) {
+			Stage ReviewStage = new Stage();
+			Review reviewer = new Review();
+			reviewer.start(ReviewStage);
+			ReviewStage.show();
+
+		}
+	});
+
+
+
 	Group root = (Group) scene.getRoot();
    	root.getChildren().add(grid);
 

@@ -1,4 +1,4 @@
-package org.openjfx;
+//package org.openjfx;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -21,7 +21,6 @@ public class Review extends Application {
     private Stage editStage;
 
     private Immigrant currentImmigrant = new Immigrant("Johnny", "Yolo", "A123456");
-
     public boolean supplementCheck() {
         // Method to perform a validation check on the immigrant data
         // Implement the validation logic here
@@ -83,7 +82,7 @@ public class Review extends Application {
     }
     @Override
     public void start(Stage stage) {
-        
+ 
         alienLabel = new Label("Alien Number: " + currentImmigrant.getAlienID());
         firstLabel = new Label("First Name: " + currentImmigrant.getFirstName());
         lastLabel = new Label("Last Name: " + currentImmigrant.getLastName());
@@ -141,9 +140,9 @@ public class Review extends Application {
         
         
 		
-        var scene = new Scene(vbox, 640, 480);
+        Scene var = new Scene(vbox, 640, 480);
 
-        stage.setScene(scene);
+        stage.setScene(var);
         stage.show();
     }
 
