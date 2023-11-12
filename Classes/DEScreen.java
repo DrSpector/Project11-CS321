@@ -111,6 +111,13 @@ public class DEScreen extends Application {
 		lNameOutput.setText("");
 		idOutput.setText("");
 		statusInput.setText("");
+
+		if(idInput.getText().equals("") || fNameInput.getText().equals("") || lNameInput.getText().equals(""))
+		{
+			userMessage.setText("Error, one or more fields blank.");
+			userMessage.setVisible(true);
+		}
+		
 		Immigrant foundImm = Immigrant.createImmigrant1(idInput.getText(),fNameInput.getText(),lNameInput.getText());
 		if(foundImm != null)
 		{
